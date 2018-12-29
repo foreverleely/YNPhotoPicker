@@ -78,13 +78,13 @@
     [vc presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark - 打开相机
+#pragma mark - open carema
 - (void)openCaremaPresentFrom:(UIViewController *)vc {
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     [vc presentViewController:self.imagePicker animated:YES completion:nil];
 }
 
-#pragma mark - 打开相册
+#pragma mark - open album
 - (void)openAlbumPresentFrom:(UIViewController *)vc {
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [vc presentViewController:self.imagePicker animated:YES completion:nil];

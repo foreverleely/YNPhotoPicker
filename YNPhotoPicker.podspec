@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YNPhotoPicker"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "help for imagepicker in caream or photo library"
 
   # This description is used to generate tags and improve search results.
