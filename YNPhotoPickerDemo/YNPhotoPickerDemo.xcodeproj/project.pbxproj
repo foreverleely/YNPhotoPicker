@@ -15,7 +15,7 @@
 		B40B93FE21D31EBD005EEA55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B93FD21D31EBD005EEA55 /* main.m */; };
 		B40B940821D31EBD005EEA55 /* YNPhotoPickerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B940721D31EBD005EEA55 /* YNPhotoPickerDemoTests.m */; };
 		B40B941321D31EBD005EEA55 /* YNPhotoPickerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B941221D31EBD005EEA55 /* YNPhotoPickerDemoUITests.m */; };
-		B40B942521D321AF005EEA55 /* YNPhotoPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B942321D321AF005EEA55 /* YNPhotoPickerManager.m */; };
+		B490A2DC21FC02C900FFE0F8 /* YNPhotoPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B490A2DA21FC02C900FFE0F8 /* YNPhotoPickerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		B40B940E21D31EBD005EEA55 /* YNPhotoPickerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNPhotoPickerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40B941221D31EBD005EEA55 /* YNPhotoPickerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNPhotoPickerDemoUITests.m; sourceTree = "<group>"; };
 		B40B941421D31EBD005EEA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B40B942321D321AF005EEA55 /* YNPhotoPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNPhotoPickerManager.m; path = ../../YNPhotoPicker/YNPhotoPickerManager.m; sourceTree = "<group>"; };
-		B40B942421D321AF005EEA55 /* YNPhotoPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNPhotoPickerManager.h; path = ../../YNPhotoPicker/YNPhotoPickerManager.h; sourceTree = "<group>"; };
+		B490A2DA21FC02C900FFE0F8 /* YNPhotoPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNPhotoPickerManager.m; path = ../../YNPhotoPickerManager/YNPhotoPickerManager.m; sourceTree = "<group>"; };
+		B490A2DB21FC02C900FFE0F8 /* YNPhotoPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNPhotoPickerManager.h; path = ../../YNPhotoPickerManager/YNPhotoPickerManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 		B40B93ED21D31EBC005EEA55 /* YNPhotoPickerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B40B942421D321AF005EEA55 /* YNPhotoPickerManager.h */,
-				B40B942321D321AF005EEA55 /* YNPhotoPickerManager.m */,
+				B490A2DB21FC02C900FFE0F8 /* YNPhotoPickerManager.h */,
+				B490A2DA21FC02C900FFE0F8 /* YNPhotoPickerManager.m */,
 				B40B93EE21D31EBC005EEA55 /* AppDelegate.h */,
 				B40B93EF21D31EBC005EEA55 /* AppDelegate.m */,
 				B40B93F121D31EBC005EEA55 /* ViewController.h */,
@@ -268,9 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40B93F321D31EBC005EEA55 /* ViewController.m in Sources */,
-				B40B942521D321AF005EEA55 /* YNPhotoPickerManager.m in Sources */,
 				B40B93FE21D31EBD005EEA55 /* main.m in Sources */,
 				B40B93F021D31EBC005EEA55 /* AppDelegate.m in Sources */,
+				B490A2DC21FC02C900FFE0F8 /* YNPhotoPickerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

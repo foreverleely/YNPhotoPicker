@@ -8,7 +8,6 @@
 
 #import "YNPhotoPickerManager.h"
 
-#import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 
 @interface YNPhotoPickerManager()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>

@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YNPhotoPickerManager"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "help for imagepicker in caream or photo library"
 
   # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "auth, caream, album, help these"
 
-  spec.homepage     = "https://github.com/foreverleely/YNPhotoPicker"
+  spec.homepage     = "https://github.com/foreverleely/YNPhotoPickerManager"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/foreverleely/YNPhotoPicker.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/foreverleely/YNPhotoPickerManager.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "YNPhotoPicker/*.{h,m}"
+  spec.source_files  = "YNPhotoPickerManager/*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
