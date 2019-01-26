@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "YNPhotoPicker"
+  spec.name         = "YNPhotoPickerManager"
   spec.version      = "1.0.2"
   spec.summary      = "help for imagepicker in caream or photo library"
 

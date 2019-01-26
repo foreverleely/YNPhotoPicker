@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 
-#import "YNPhotoPicker.h"
+#import "YNPhotoPickerManager.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) YNPhotoPicker *photoPicker;
+@property (nonatomic, strong) YNPhotoPickerManager *photoPicker;
 
 @end
 
@@ -38,32 +38,32 @@
 }
 
 - (void)photoAuth {
-    [YNPhotoPicker checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
+    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
         
     }];
 }
 
 - (void)openCarema {
     __weak typeof(self) weakSelf = self;
-    [YNPhotoPicker checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
+    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
         __strong typeof(self) strongSelf = weakSelf;
-        [YNPhotoPicker.share openCaremaPresentFrom:strongSelf];
+        [YNPhotoPickerManager.share openCaremaPresentFrom:strongSelf];
     }];
 }
 
 - (void)openAlbum {
     __weak typeof(self) weakSelf = self;
-    [YNPhotoPicker checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
+    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
         __strong typeof(self) strongSelf = weakSelf;
-        [YNPhotoPicker.share openAlbumPresentFrom:strongSelf];
+        [YNPhotoPickerManager.share openAlbumPresentFrom:strongSelf];
     }];
 }
 
 #pragma mark - Getters
 
-- (YNPhotoPicker *)photoPicker {
+- (YNPhotoPickerManager *)photoPicker {
     if (!_photoPicker) {
-        _photoPicker = [YNPhotoPicker new];
+        _photoPicker = [YNPhotoPickerManager new];
     }
     return _photoPicker;
 }

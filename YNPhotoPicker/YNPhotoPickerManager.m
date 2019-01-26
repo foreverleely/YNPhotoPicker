@@ -1,29 +1,29 @@
 //
-//  YNPhotoPicker.m
+//  YNPhotoPickerManager.m
 //
 //
 //  Created by liyangly on 2018/12/26.
 //  Copyright © 2018 liyang. All rights reserved.
 //
 
-#import "YNPhotoPicker.h"
+#import "YNPhotoPickerManager.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 
-@interface YNPhotoPicker()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface YNPhotoPickerManager()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @end
 
-@implementation YNPhotoPicker
+@implementation YNPhotoPickerManager
 
-+ (YNPhotoPicker *)share {
-    static YNPhotoPicker *manager = nil;
++ (YNPhotoPickerManager *)share {
+    static YNPhotoPickerManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [YNPhotoPicker new];
+        manager = [YNPhotoPickerManager new];
     });
     return manager;
 }
@@ -58,12 +58,9 @@
 + (void)showAuthorizationAlert:(BOOL)isCamera photoRead:(BOOL)isPhotoRead forVC:(UIViewController *)vc {
     // don't forget the auth desc in info.plist
     NSDictionary *tempInfoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *cameraDescription = [tempInfoDict objectForKey:@"NSCameraUsageDescription"];
-    NSString *photoUsageDescription = [tempInfoDict objectForKey:@"NSPhotoLibraryUsageDescription"];
-    NSString *photoAddUsageDescription = [tempInfoDict objectForKey:@"NSPhotoLibraryAddUsageDescription"];
     
     NSString *title = isCamera ? @"We Would Like to Access Your Camera" : @"We Would Like to Access Your Photo Gallery";
-    NSString *message = isCamera ? cameraDescription : (isPhotoRead ? photoUsageDescription : photoAddUsageDescription);
+    NSString *message = isCamera ? [tempInfoDict objectForKey:@"NSCameraUsageDescription"] : (isPhotoRead ? [tempInfoDict objectForKey:@"NSPhotoLibraryUsageDescription"] : [tempInfoDict objectForKey:@"NSPhotoLibraryAddUsageDescription"]);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *enable = [UIAlertAction actionWithTitle:@"Enable" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

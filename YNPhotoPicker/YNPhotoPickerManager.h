@@ -1,5 +1,5 @@
 //
-//  YNPhotoPicker.h
+//  YNPhotoPickerManager.h
 //  
 //
 //  Created by liyangly on 2018/12/26.
@@ -11,12 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YNPhotoPicker : NSObject
+@interface YNPhotoPickerManager : NSObject
 
 // 完成图片选择的block
-@property (nonatomic, copy) void(^finishPickingMediaWithInfo)(NSDictionary<NSString *,id> *);
+@property (nonatomic, copy) void(^finishPickingMediaWithInfo)(NSDictionary<NSString *,id> *info);
 
-+ (YNPhotoPicker *)share;
++ (YNPhotoPickerManager *)share;
 
 // auth
 + (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion;
