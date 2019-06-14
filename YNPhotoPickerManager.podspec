@@ -9,14 +9,14 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "YNPhotoPickerManager"
-  spec.version      = "1.0.5"
+  spec.version      = "1.0.6"
   spec.summary      = "help for imagepicker in caream or photo library"
 
   spec.description  = "auth, caream, album, help these"
 
   spec.homepage     = "https://github.com/foreverleely/YNPhotoPickerManager"
 
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   spec.author             = { "liyangly" => "foreverleely@hotmail.com" }
