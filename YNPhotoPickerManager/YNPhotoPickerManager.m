@@ -131,7 +131,7 @@
     if (!_imagePicker) {
         _imagePicker = [[UIImagePickerController alloc] init];
         _imagePicker.delegate = self;
-        _imagePicker.allowsEditing = NO;
+        _imagePicker.allowsEditing = YES;
     }
     return _imagePicker;
 }
