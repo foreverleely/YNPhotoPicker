@@ -40,23 +40,25 @@
 - (void)photoAuth {
     [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
         
+    } cancel:^{
+        
     }];
 }
 
 - (void)openCarema {
     __weak typeof(self) weakSelf = self;
-    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [YNPhotoPickerManager.share openCaremaPresentFrom:strongSelf];
-    }];
+//    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
+//        __strong typeof(self) strongSelf = weakSelf;
+//        [YNPhotoPickerManager.share openCaremaPresentFrom:strongSelf];
+//    }];
 }
 
 - (void)openAlbum {
     __weak typeof(self) weakSelf = self;
-    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [YNPhotoPickerManager.share openAlbumPresentFrom:strongSelf];
-    }];
+//    [YNPhotoPickerManager checkPhotoAuthorizationForVC:self camera:NO photoRead:YES completion:^{
+//        __strong typeof(self) strongSelf = weakSelf;
+//        [YNPhotoPickerManager.share openAlbumPresentFrom:strongSelf];
+//    }];
 }
 
 #pragma mark - Getters

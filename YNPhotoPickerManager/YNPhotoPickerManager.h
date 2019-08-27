@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (YNPhotoPickerManager *)share;
 
 // auth
-+ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion;
++ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion cancel:(void(^)(void))cancel;
 
 // open carema
 - (void)openCaremaPresentFrom:(UIViewController *)vc;

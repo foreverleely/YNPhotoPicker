@@ -27,7 +27,7 @@
     return manager;
 }
 
-+ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion {
++ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion cancel:(void(^)(void))cancel {
     
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     if (PHAuthorizationStatusAuthorized == status) {
@@ -50,18 +50,20 @@
             }
         }];
     } else {
-        [self showAuthorizationAlert:isCamera photoRead:isPhotoRead forVC:vc];
+        [self showAuthorizationAlert:isCamera photoRead:isPhotoRead forVC:vc cancel:cancel];
     }
 }
 
-+ (void)showAuthorizationAlert:(BOOL)isCamera photoRead:(BOOL)isPhotoRead forVC:(UIViewController *)vc {
++ (void)showAuthorizationAlert:(BOOL)isCamera photoRead:(BOOL)isPhotoRead forVC:(UIViewController *)vc cancel:(void(^)(void))cancelBlock {
     // don't forget the auth desc in info.plist
     NSDictionary *tempInfoDict = [[NSBundle mainBundle] infoDictionary];
     
     NSString *title = isCamera ? @"We Would Like to Access Your Camera" : @"We Would Like to Access Your Photo Gallery";
     NSString *message = isCamera ? [tempInfoDict objectForKey:@"NSCameraUsageDescription"] : (isPhotoRead ? [tempInfoDict objectForKey:@"NSPhotoLibraryUsageDescription"] : [tempInfoDict objectForKey:@"NSPhotoLibraryAddUsageDescription"]);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        cancelBlock();
+    }];
     UIAlertAction *enable = [UIAlertAction actionWithTitle:@"Enable" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
