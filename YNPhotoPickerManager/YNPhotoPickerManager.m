@@ -27,6 +27,11 @@
     return manager;
 }
 
++ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion {
+    
+    [self checkPhotoAuthorizationForVC:vc camera:isCamera photoRead:isPhotoRead completion:completion cancel:nil];
+}
+
 + (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion cancel:(void(^)(void))cancel {
     
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
@@ -62,7 +67,9 @@
     NSString *message = isCamera ? [tempInfoDict objectForKey:@"NSCameraUsageDescription"] : (isPhotoRead ? [tempInfoDict objectForKey:@"NSPhotoLibraryUsageDescription"] : [tempInfoDict objectForKey:@"NSPhotoLibraryAddUsageDescription"]);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        cancelBlock();
+        if (cancelBlock) {
+            cancelBlock();
+        }
     }];
     UIAlertAction *enable = [UIAlertAction actionWithTitle:@"Enable" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         

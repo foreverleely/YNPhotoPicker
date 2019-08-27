@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface YNPhotoPickerManager : NSObject
 
 // 完成图片选择的block
@@ -19,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (YNPhotoPickerManager *)share;
 
 // auth
++ (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion;
+
 + (void)checkPhotoAuthorizationForVC:(UIViewController *)vc camera:(BOOL)isCamera photoRead:(BOOL)isPhotoRead completion:(void(^)(void))completion cancel:(void(^)(void))cancel;
 
 // open carema
@@ -28,4 +28,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+
