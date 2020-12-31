@@ -26,6 +26,9 @@
 // open photo library
 - (void)openAlbumPresentFrom:(UIViewController *)vc;
 
+// alert
++ (void)showAuthorizationAlert:(BOOL)isCamera photoRead:(BOOL)isPhotoRead forVC:(UIViewController *)vc cancel:(void(^)(void))cancelBlock;
+
 @end
 
 
