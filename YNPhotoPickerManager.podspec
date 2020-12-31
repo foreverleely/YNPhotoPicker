@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "YNPhotoPickerManager"
-  spec.version      = "1.1.1"
+  spec.version      = "1.1.2"
   spec.summary      = "help for imagepicker in caream or photo library"
 
   spec.description  = "auth, caream, album, help these"
